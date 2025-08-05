@@ -1,5 +1,5 @@
 #!/bin/bash
-PYTHON="/home/fengwei/anaconda3/bin/python3"
+PYTHON="../anaconda3/bin/python3"
 export CUDA_VISIBLE_DEVICES=${1}
 
 model='dino'
@@ -7,8 +7,8 @@ model='dino'
 DATASETS=("cubc" "scarsc" "fgvcc")
 TASKs=("A_L+A_U+B->A_U+B+C")
 
-SAVE_DIR=/mnt/sdb/fengwei/GCD_natural/free-main/checkpoints/free/
-WEIGHTS_PATH=/mnt/sdb/fengwei/GCD_natural/free-main/data/sample_weights/ssbc/cubc.json
+SAVE_DIR=../GCD_natural/free-main/checkpoints/free/
+WEIGHTS_PATH=../GCD_natural/free-main/data/sample_weights/ssbc/cubc.json
 
 for d in ${!DATASETS[@]}; do
     for t in ${!TASKs[@]}; do
