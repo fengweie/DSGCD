@@ -8,3 +8,49 @@ Generalized Category Discovery (GCD) aims to leverage labeled samples from known
 # Note
 We will release our code soon.
 
+
+## Prerequisite 🛠️
+
+First, you need to clone the HiLo repository from GitHub. Open your terminal and run the following command:
+
+```
+git clone https://github.com/Visual-AI/free.git
+cd free
+```
+
+We recommend setting up a conda environment for the project:
+
+```bash
+conda create --name=free python=3.9
+conda activate free
+pip install -r requirements.txt
+```
+
+## Running 🏃
+### Config
+
+Set paths to datasets and desired log directories in ```config.py```
+
+
+### Datasets
+
+We use DomainNet and our created Semantic Shift Benchmark Corruption (SSB-C) datasets:
+
+* [DomainNet](https://ai.bu.edu/M3SDA/)
+* SSB-C ([Personal OneDrive](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/hjwang_connect_hku_hk/EeeL3WQ0zWdEsXhmmYeHBUUBnNVpNWbVm7mVA-jiyNVnNw?e=Dc4pWl) / [HKU Data Repository](https://doi.org/10.25442/hku.28607261))
+
+### Scripts
+
+**Train the model**:
+
+```
+bash scripts/free/domainnet.sh 0
+bash scripts/free/ssbc.sh 0
+```
+Just be aware to make necessary changes (e.g., ``PYTHON``, ``SAVE_DIR``, ``WEIGHTS_PATH``, etc).
+
+
+
+## Citing this work
+<span id="jump"></span>
+If you find this repo useful for your research, please consider citing our paper.
