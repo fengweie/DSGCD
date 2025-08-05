@@ -1,5 +1,5 @@
 #!/bin/bash
-PYTHON="/home/fengwei/anaconda3/bin/python3"
+PYTHON="../anaconda3/bin/python3"
 export CUDA_VISIBLE_DEVICES=${1}
 
 model='dino'
@@ -19,7 +19,7 @@ TASKs=("A_L+A_U+B->A_U+B+C")
 partial_dataset='False'
 uda_loss='True'
 
-SAVE_DIR=/mnt/sdb/fengwei/GCD_natural/free-main/checkpoints/free/
+SAVE_DIR=../GCD_natural/free-main/checkpoints/free/
 
 for d in ${!DATASETS[@]}; do
     for t in ${!TASKs[@]}; do
@@ -27,7 +27,7 @@ for d in ${!DATASETS[@]}; do
             for ee in ${!ENVs2[@]}; do
                 if [ ${ENVs1[$e]} != ${ENVs2[$ee]} ]; then
                     echo ${ENVs1[$e]} ${ENVs2[$ee]} others
-                    WEIGHTS_PATH=/mnt/sdb/fengwei/GCD_natural/free-main/data/sample_weights/domainnet/${ENVs2[$ee]}.json
+                    WEIGHTS_PATH=../GCD_natural/free-main/data/sample_weights/domainnet/${ENVs2[$ee]}.json
                     ${PYTHON} -m methods.free.train_nips \
                                 --dataset_name 'domainnet' \
                                 --batch_size 800 \
